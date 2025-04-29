@@ -1,14 +1,14 @@
 use opencv::{
     core::{Scalar, Vector},
-    imgcodecs::imread,
-    imgcodecs::imwrite,
-    imgproc::LINE_4,
-    imgproc::rectangle,
     dnn::DNN_BACKEND_CUDA, // I will utilize my GPU to perform faster inference. Your way may vary
     dnn::DNN_TARGET_CUDA,
+    highgui,
+    imgcodecs::imread,
+    imgcodecs::imwrite,
+    imgproc::rectangle,
+    imgproc::LINE_4,
     prelude::*,
     videoio,
-    highgui
 };
 
 use od_opencv::{
@@ -16,13 +16,13 @@ use od_opencv::{
     // I'll use YOLOv8 by Ultralytics.
     // If you prefer traditional YOLO, then import it as:
     // model_classic::ModelYOLOClassic
-    model_ultralytics::ModelUltralyticsV8
+    model_ultralytics::ModelUltralyticsV8,
 };
 
 fn main() {
     println!("Hello, part1!");
 
-/*     let classes_labels: Vec<&str> = vec!["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat", "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella", "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball", "kite", "baseball bat", "baseball glove", "skateboard", "surfboard", "tennis racket", "bottle", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "banana", "apple", "sandwich", "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake", "chair", "sofa", "pottedplant", "bed", "diningtable", "toilet", "tvmonitor", "laptop", "mouse", "remote", "keyboard", "cell phone", "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors", "teddy bear", "hair drier", "toothbrush"];
+    /*     let classes_labels: Vec<&str> = vec!["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat", "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella", "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball", "kite", "baseball bat", "baseball glove", "skateboard", "surfboard", "tennis racket", "bottle", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "banana", "apple", "sandwich", "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake", "chair", "sofa", "pottedplant", "bed", "diningtable", "toilet", "tvmonitor", "laptop", "mouse", "remote", "keyboard", "cell phone", "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors", "teddy bear", "hair drier", "toothbrush"];
 
     // Define format for OpenCV's DNN module
     let mf = ModelFormat::ONNX;
@@ -54,7 +54,6 @@ fn main() {
     // Finally save the updated image to the file system
     imwrite("images/dog_yolov8_n.jpg", &frame, &Vector::new()).unwrap(); */
 }
-
 
 #[cfg(test)]
 mod tests {

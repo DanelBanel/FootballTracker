@@ -2,7 +2,7 @@
 An application written in Rust that uses machine learning, computer vision and deep learning to create a football analysis system
 
 ## TODO list
-  - can I move opencv_world4110.dll to same place as executable in build.rs? By placing the dll at root (or assets)
+- fix pre-commit hook for cargo fmt, cargo fix? See if there is one good online
 
 ## Requirements and installation
 https://doc.rust-lang.org/cargo/index.html
@@ -32,8 +32,8 @@ Installing `cmake`, documentation here:
 Installing `pkg-config `, documentation here:
 [https://gtk-rs.org/gtk4-rs/stable/latest/book/installation_windows.html#pkg-config](https://gtk-rs.org/gtk4-rs/stable/latest/book/installation_windows.html#pkg-config)
 
-
-Move `opencv_world4110.dll` (or you equivalent) to same place as executable (`target/debug`)
+#### Get OpenCV dll file
+Follow the instructions in issue thread above. In the build stage, `build.rs` moves the file `*.dll` to same place as the executable (`target/debug`). Therefore you have to move that file to `assets/` and the build script will automatically move it to the correct place. It is in `.gitignore` as one does not want to push those files.
 
 ### Environment variables
 

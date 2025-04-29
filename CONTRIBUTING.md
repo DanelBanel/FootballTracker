@@ -21,3 +21,12 @@ cargo fix # Fix lint warnings
 
 ### TODO
 Special credit for inspiration @abdullahtarek
+
+### Pre commit hooks
+
+This repository runs several scripts and checks before a commit can be created. Check [.git-hooks](.git-hooks/) for what is actually run.
+
+To activate the git hooks locally run this command:
+```bash
+git config --local core.hooksPath .git-hooks
+```
