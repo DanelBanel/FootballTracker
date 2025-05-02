@@ -17,11 +17,12 @@ From the *ultralytics* [GitHub](https://github.com/ultralytics/ultralytics) you 
 YOLO11n
 
 ```bash
+wget https://github.com/ultralytics/assets/releases/download/<version>/<model> -O assets/models/yolov8n.pt # Or download it from github manually
 pip install pip-tools
 python -m piptools compile requirements.in
-py -3.11 -m venv venv
+py -3.11 -m venv venv # Requires python3.11 runtime
 .\venv\Scripts\Activate # In powershell
-python -m pip install -r requirements.txt
+pip install -r requirements.txt # May require a --force-reinstall
 python convert_pt_to_onnx.py # After moving the .pt file to assets/models/
 ```
 I used python3.11  for this, as the python package *onnx* does not behave well with 3.13.
