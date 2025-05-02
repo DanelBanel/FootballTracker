@@ -10,6 +10,22 @@ https://doc.rust-lang.org/cargo/index.html
 https://crates.io/crates/object-detection-opencv-rust
 https://crates.io/crates/opencv/0.66.0
 
+
+### Models
+From the *ultralytics* [GitHub](https://github.com/ultralytics/ultralytics) you can download different models in *.pt* format. To use the models in Rust we need to convert them to *onnx* format. I created a small Python script that does this:
+
+YOLO11n
+
+```bash
+pip install pip-tools
+python -m piptools compile requirements.in
+py -3.11 -m venv venv
+.\venv\Scripts\Activate # In powershell
+python -m pip install -r requirements.txt
+python convert_pt_to_onnx.py # After moving the .pt file to assets/models/
+```
+I used python3.11  for this, as the python package *onnx* does not behave well with 3.13.
+
 ### Installation
 This was done on Windows 10:
 
